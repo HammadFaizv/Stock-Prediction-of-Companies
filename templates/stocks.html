@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Stock Prediction</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Stocker</a>
+    </div>
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">STOCK PREDICTION</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Predict the probability of Stocks
+        <br>
+        </h5>
+      </div>
+
+              <div class="row">
+    <form action='/predict' method="POST" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for="first_name"><b>Enter Company or Sector Name</b></label>
+            <br>
+          <input   id="first_name" name='stockName'type="text" class="validate" autocomplete="off">
+        </div>
+      </div>
+          <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+    </form>
+      </div>
+
+      <br><h4 align="center"<b>{{pred}}</b></h4>
+        <br>
+
+    </div>
+  </div>
+  </div>>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">My Bio</h5>
+          <p class="grey-text text-lighten-4">Hello there!! This is Hammad with his ml model at your service!</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="https://github.com/HammadFaizv">Hammad Faizvi</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
+
