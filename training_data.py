@@ -20,13 +20,15 @@ cv.fit(headlines)
 
 def data_cleaner(headlines):
     lines = []
-    for i in range(1,len(headlines)):
-        line = re.sub('[^A-Za-z]',' ',headlines[i])
-        line = re.sub('[ ]+', ' ', line)
-        line = line.lower()
-        lines.append(line)
+    for i in range(len(headlines)):
+        if(headlines[i]):
+            line = re.sub('[^A-Za-z]',' ',headlines[i])
+            line = re.sub('[ ]+', ' ', line)
+            line = line.lower()
+            lines.append(line)
     data = ' '.join(x for x in lines)
     data = " ".join(w for w in nltk.wordpunct_tokenize(data) if w.lower() in words or not w.isalpha())
+    print(data)
     return data
 
 
