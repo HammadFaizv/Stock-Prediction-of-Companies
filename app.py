@@ -46,10 +46,8 @@ def predict():
     train_data = data_cleaner(headlines)
     pred = model_prediction(train_data)
     #return render_template("forest.html",pred=pred[0][0])
-    if (pred[0][1]>0.7):
-        return render_template('stock_stonks.html',pred='The Stocks for {} are very likely to go up.\nProbability of stock increasing is {}'.format(stockName,pred[0][1]))
-    elif (pred[0][1]>0.5):
-        return render_template('stock_stonks.html',pred='The Stocks for {} have some chance to go up.\nProbability of stock increasing is {}'.format(stockName, pred[0][1]))    
+    if (pred[0][1]>0.5):
+        return render_template('stock_stonks.html',pred='The Stocks for {} are likely to go up.\nProbability of stock increasing is {}'.format(stockName,pred[0][1]))
     else:
         return render_template('stock_not_stonks.html',pred='The {} stocks doesnt seem to increase.\n Probability of stocks going up is {}'.format(stockName,pred[0][1]))
 
